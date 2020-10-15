@@ -18,6 +18,7 @@ public class HiloSocket extends Thread {
 
     @Override
     public void run() {
+        
         try {
             PrintWriter out = null;
             BufferedReader in = null;
@@ -39,9 +40,11 @@ public class HiloSocket extends Thread {
                     break;
                 }
             }
+            
             out.close();
             in.close();
             socket.close();
+            
         } catch (IOException ex) {
             Logger.getLogger(HiloSocket.class.getName()).log(Level.SEVERE, null, ex);
         }

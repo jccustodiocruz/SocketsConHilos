@@ -16,9 +16,11 @@ import java.util.logging.Logger;
 public class ClienteSocket {
 
     public static void main(String[] args) {
+
         Socket kkSocket = null;
         PrintWriter out = null;
         BufferedReader in = null;
+
         try {
             kkSocket = new Socket("localhost", 4444);
             out = new PrintWriter(kkSocket.getOutputStream(), true);
@@ -38,10 +40,12 @@ public class ClienteSocket {
                     out.println(fromUser);
                 }
             }
+            
             out.close();
             in.close();
             stdIn.close();
             kkSocket.close();
+            
         } catch (IOException ex) {
             Logger.getLogger(ClienteSocket.class.getName()).log(Level.SEVERE, null, ex);
         }
