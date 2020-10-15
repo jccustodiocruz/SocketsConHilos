@@ -24,8 +24,8 @@ public class KnockKnockServer {
                 Socket clientSocket = serverSocket.accept();
                 new HiloSocket(clientSocket).start();
                 System.out.println("Conectado");
-
             }
+            
         } catch (IOException e) {
             System.err.println("Could not listen on port: 4444.");
             System.exit(1);
